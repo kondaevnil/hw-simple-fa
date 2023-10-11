@@ -10,6 +10,11 @@ fun main(args: Array<String>) {
                 println("Converting!")
                 converter.convert(args[2])
                 println("Done!")
+            } else if (args[0] == "regex") {
+                var vm = RegexVm(args[1])
+            } else if (args[0] == "minimize") {
+                val min = DfaMinimization(args[1])
+                min.minimize(args[2])
             } else {
                 println("Illegal program")
             }

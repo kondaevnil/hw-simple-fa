@@ -2,14 +2,16 @@
 Theoretical computer science. Homework task 3. Finite machines and friends
 
 ## Description
-A simple console application capable of simulating the operation of an NFA and converting NFA to DFA using the "Subset Construction" method.
+A simple console application capable of simulating the operation of an NFA, converting NFA to DFA using the "Subset Construction" method and minimize DFA using Moore's algorithm.
 
 ## Usage
-Program arguments: ``check/convert <in.file> <string>/<out_file_name>``
+Program arguments: ``check/convert/minimize <in.file> <string>/<out_file_name>``
 ### Check
 Displays whether the given string is recognized automatically
 ### Convert
 Creates a DFA file with the format described below
+### Minimize
+Minimizes a given DFA and writes it
 ## Format of ``<in.file>``
 ``n // number of states``
 
