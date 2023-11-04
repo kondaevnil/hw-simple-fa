@@ -81,7 +81,7 @@ class NfaConverter(programFile: String) {
 
             if (convertedStates.containsKey(newState)) {
                 convertedTransitionFunction[Pair(convertedStates[states]!!, letter)] = convertedStates[newState]!!
-                return
+                continue
             }
 
             convertedStates[newState] = statesCounter
