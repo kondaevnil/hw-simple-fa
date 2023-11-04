@@ -66,10 +66,12 @@ class DfaMinimization(dfaConfig: String) {
         }
 
         var canSplit = true
+        var split = false;
         val tmpClasses = mutableListOf(acceptStates, graph.keys.filter { !acceptStates.contains(it) }.toMutableSet() )
 
         while (canSplit) {
             canSplit = false
+            split = false
 
             for (eqClass in tmpClasses) {
                 for (letter in 0..< alphabetSize) {
@@ -92,7 +94,12 @@ class DfaMinimization(dfaConfig: String) {
                         for (newClass in newClasses.values)
                             tmpClasses.add(newClass)
                         canSplit = true
+                        split = true
                     }
+                }
+
+                if (split) {
+                    break
                 }
             }
         }
